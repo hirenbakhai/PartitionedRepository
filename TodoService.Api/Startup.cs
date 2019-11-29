@@ -31,8 +31,7 @@ namespace TodoService.Api
         public void ConfigureServices(IServiceCollection services)
         {
             // Bind database options. Invalid configuration will terminate the application startup.
-            var connectionStringsOptions =
-                Configuration.GetSection("ConnectionStrings").Get<ConnectionStringsOptions>();
+            var connectionStringsOptions = Configuration.GetSection("ConnectionStrings").Get<ConnectionStringsOptions>();
             var cosmosDbOptions = Configuration.GetSection("CosmosDb").Get<CosmosDbOptions>();
             var (serviceEndpoint, authKey) = connectionStringsOptions.ActiveConnectionStringOptions;
             var (databaseName, collectionData) = cosmosDbOptions;
@@ -40,7 +39,7 @@ namespace TodoService.Api
 
             // Add Mvc.
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .SetCompatibilityVersion(CompatibilityVersion.Latest)
                 .AddJsonOptions(options =>
                 {
                     options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();

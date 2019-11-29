@@ -2,6 +2,7 @@
 // Licensed under the MIT license.using System;
 
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TodoService.Core.Exceptions;

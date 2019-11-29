@@ -5,8 +5,8 @@ namespace TodoService.Api.Options
 {
     public enum ConnectionStringMode
     {
-        Azure,
-        Emulator
+        Azure, 
+        Emulator,        
     }
 
     public class ConnectionStringsOptions
